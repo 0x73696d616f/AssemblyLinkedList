@@ -1,7 +1,5 @@
-# Description
+## Description
 Linked list implementation in assembly.
-
-# Usage
 
 ## Run tests
 `make tests` 
