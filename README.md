@@ -1,5 +1,5 @@
 ## Description
-Linked list implementation in assembly.\
+Linked list implementation in assembly.
 
 ## Benchmark results
 |        | This Linked List [gas] | Mapping Linked List [gas] |
