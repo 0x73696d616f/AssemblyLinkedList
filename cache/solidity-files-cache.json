@@ -721,8 +721,8 @@
       }
     },
     "src/LinkedList.sol": {
-      "lastModificationDate": 1672942185211,
-      "contentHash": "20bb4fa02d0e0431416fa6e52a1c4bb2",
+      "lastModificationDate": 1673267929679,
+      "contentHash": "2e7f5642a2ee5b06bdd6b9aedcb6b135",
       "sourceName": "src/LinkedList.sol",
       "solcConfig": {
         "settings": {
@@ -761,8 +761,8 @@
       }
     },
     "test/LinkedList.t.sol": {
-      "lastModificationDate": 1672943680113,
-      "contentHash": "354244a3a42c23ddead417a98a8e42fa",
+      "lastModificationDate": 1673268091556,
+      "contentHash": "46a3c5391487059ed5d3b4099df8bfba",
       "sourceName": "test/LinkedList.t.sol",
       "solcConfig": {
         "settings": {

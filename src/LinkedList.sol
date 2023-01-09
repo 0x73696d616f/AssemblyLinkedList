@@ -11,6 +11,7 @@ contract LinkedList {
     /**
      * @notice A node of the linked list.
      * @param value The value of the node.
+     * @dev Use this to pass parameters to the insert function.
      */
     struct Node {
         uint256 value;
@@ -30,11 +31,11 @@ contract LinkedList {
 
     /**
      * @notice Inserts a node into the linked list.
-     * @param previousNodeSlot_ The slot of the previous node.
      * @param node_ The new node.
+     * @param previousNodeSlot_ The slot of the previous node.
      * @param nextNodeSlot_ The slot of the next node.
      */
-    function insert(bytes32 previousNodeSlot_, Node memory node_, bytes32 nextNodeSlot_) public returns(bytes32 slot_){
+    function insert(Node memory node_, bytes32 previousNodeSlot_, bytes32 nextNodeSlot_) public returns(bytes32 slot_){
         slot_ = keccak256(abi.encodePacked(++_nonce));
         // Set the new node value.
         _setUint256(slot_, Variables.value, node_.value);

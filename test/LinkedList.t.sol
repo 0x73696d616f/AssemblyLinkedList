@@ -28,7 +28,7 @@ contract LinkedListTest is Test {
         // 2 1 3.
         bytes32 slot4_ = _insertAtTheHead(4); 
         // 4 2 1 3.
-        bytes32 slot5_ = _insert(slot2_, LinkedList.Node(5), slot1_);
+        bytes32 slot5_ = _insert(LinkedList.Node(5), slot2_, slot1_);
         // 4 2 5 1 3.
 
         assertEq(_linkedList.getBytes32(slot4_, LinkedList.Variables.next), slot2_);
@@ -36,7 +36,6 @@ contract LinkedListTest is Test {
         assertEq(_linkedList.getBytes32(slot5_, LinkedList.Variables.next), slot1_);
         assertEq(_linkedList.getBytes32(slot1_, LinkedList.Variables.next), slot3_);
         assertEq(_linkedList.getBytes32(slot3_, LinkedList.Variables.next), bytes32(0));
-
     }
 
     function testRemove() public {
@@ -70,12 +69,12 @@ contract LinkedListTest is Test {
     function _insertAtTheTail(uint256 value_) internal returns(bytes32 slot_) {
         bytes32 previousNode_ = _linkedList.getTail();
         bytes32 nextNode_ = bytes32(0);
-        slot_ = _insert(previousNode_, LinkedList.Node(value_), nextNode_);
+        slot_ = _insert(LinkedList.Node(value_), previousNode_, nextNode_);
         assertEq(_linkedList.getTail(), slot_);
     }
 
-    function _insert(bytes32 previousNode_, LinkedList.Node memory node_, bytes32 nextNode_) internal returns(bytes32 slot_) {
-        slot_ = _linkedList.insert(previousNode_, node_, nextNode_);
+    function _insert(LinkedList.Node memory node_, bytes32 previousNode_, bytes32 nextNode_) internal returns(bytes32 slot_) {
+        slot_ = _linkedList.insert(node_, previousNode_, nextNode_);
         assertEq(_linkedList.getUint256(slot_, LinkedList.Variables.value), node_.value);
         if (previousNode_ != bytes32(0)) 
             assertEq(_linkedList.getBytes32(previousNode_, LinkedList.Variables.next), slot_);
@@ -85,7 +84,7 @@ contract LinkedListTest is Test {
     function _insertAtTheHead(uint256 value_) internal returns(bytes32 slot_) {
         bytes32 previousNode_ = bytes32(0);
         bytes32 nextNode_ = _linkedList.getHead(); 
-        slot_ = _insert(previousNode_, LinkedList.Node(value_), nextNode_);
+        slot_ = _insert(LinkedList.Node(value_), previousNode_, nextNode_);
         assertEq(_linkedList.getHead(), slot_);
     }
 
