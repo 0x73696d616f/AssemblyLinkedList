@@ -668,10 +668,10 @@
         }
       }
     },
-    "script/Counter.s.sol": {
-      "lastModificationDate": 1672917630429,
-      "contentHash": "0705c52104730a78aef4aa6694175c81",
-      "sourceName": "script/Counter.s.sol",
+    "script/Benchmark.s.sol": {
+      "lastModificationDate": 1673272189317,
+      "contentHash": "53ef6c346745fbed819ceab0885de6f2",
+      "sourceName": "script/Benchmark.s.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -711,17 +711,19 @@
         "lib/forge-std/src/StdUtils.sol",
         "lib/forge-std/src/Vm.sol",
         "lib/forge-std/src/console.sol",
-        "lib/forge-std/src/console2.sol"
+        "lib/forge-std/src/console2.sol",
+        "src/LinkedList.sol",
+        "src/RegularLinkedList.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
-        "CounterScript": {
-          "0.8.17+commit.8df45f5f.Linux.gcc": "Counter.s.sol/CounterScript.json"
+        "Benchmark": {
+          "0.8.17+commit.8df45f5f.Linux.gcc": "Benchmark.s.sol/Benchmark.json"
         }
       }
     },
     "src/LinkedList.sol": {
-      "lastModificationDate": 1673267929679,
+      "lastModificationDate": 1673269894991,
       "contentHash": "2e7f5642a2ee5b06bdd6b9aedcb6b135",
       "sourceName": "src/LinkedList.sol",
       "solcConfig": {
@@ -760,8 +762,48 @@
         }
       }
     },
+    "src/RegularLinkedList.sol": {
+      "lastModificationDate": 1673269882003,
+      "contentHash": "954cbbe9dc3395f5573811eab64b8467",
+      "sourceName": "src/RegularLinkedList.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "RegularLinkedList": {
+          "0.8.17+commit.8df45f5f.Linux.gcc": "RegularLinkedList.sol/RegularLinkedList.json"
+        }
+      }
+    },
     "test/LinkedList.t.sol": {
-      "lastModificationDate": 1673268091556,
+      "lastModificationDate": 1673269749740,
       "contentHash": "46a3c5391487059ed5d3b4099df8bfba",
       "sourceName": "test/LinkedList.t.sol",
       "solcConfig": {
